@@ -1,0 +1,188 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/scroll_detail"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content">
+
+        <com.facebook.shimmer.ShimmerFrameLayout
+            android:id="@+id/shimmerDetailContent"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <androidx.constraintlayout.widget.ConstraintLayout
+                android:id="@+id/containerDetail"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content">
+
+                <androidx.appcompat.widget.AppCompatImageView
+                    android:id="@+id/imageSprite"
+                    android:layout_width="@dimen/detail_sprite"
+                    android:layout_height="@dimen/detail_sprite"
+                    android:layout_marginStart="@dimen/spacing_16"
+                    android:layout_marginTop="@dimen/spacing_16"
+                    android:src="@drawable/ic_noimage"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toTopOf="parent" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textPokeId"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_16"
+                    android:layout_marginTop="@dimen/spacing_8"
+                    android:layout_marginEnd="@dimen/spacing_16"
+                    android:visibility="gone"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/imageSprite"
+                    tools:text="@string/nr" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textPokeName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_16"
+                    android:layout_marginTop="@dimen/spacing_8"
+                    android:layout_marginEnd="@dimen/spacing_16"
+                    android:textAlignment="center"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Headline4"
+                    android:textColor="#2196F3"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textPokeId"
+                    tools:text="Bulbasaur" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textFirstType"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_16"
+                    android:layout_marginTop="@dimen/spacing_8"
+                    android:layout_marginEnd="@dimen/spacing_4"
+                    android:gravity="center"
+                    android:padding="@dimen/detail_type_padding"
+                    android:text=""
+                    android:textAllCaps="true"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toStartOf="@+id/textSecondType"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textPokeName"
+                    tools:visibility="visible" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textSecondType"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_4"
+                    android:layout_marginTop="@dimen/spacing_8"
+                    android:layout_marginEnd="@dimen/spacing_16"
+                    android:gravity="center"
+                    android:padding="@dimen/detail_type_padding"
+                    android:text=""
+                    android:textAllCaps="true"
+                    android:textAppearance="@style/TextAppearance.MaterialComponents.Caption"
+                    android:visibility="invisible"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintStart_toEndOf="@+id/textFirstType"
+                    app:layout_constraintTop_toBottomOf="@+id/textPokeName"
+                    tools:text="flying"
+                    tools:visibility="visible" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textHeightCaption"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_16"
+                    android:layout_marginTop="@dimen/spacing_16"
+                    android:layout_marginEnd="@dimen/spacing_16"
+                    android:layout_marginBottom="@dimen/spacing_8"
+                    android:text="@string/height_label"
+                    app:layout_constraintEnd_toStartOf="@+id/textHeightValue"
+                    app:layout_constraintHorizontal_weight="2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textFirstType" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textHeightValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_8"
+                    android:layout_marginTop="@dimen/spacing_16"
+                    android:layout_marginEnd="@dimen/spacing_16"
+                    android:textAlignment="textEnd"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="3"
+                    app:layout_constraintStart_toEndOf="@+id/textHeightCaption"
+                    app:layout_constraintTop_toBottomOf="@+id/textFirstType" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textWeightCaption"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_16"
+                    android:layout_marginTop="@dimen/spacing_4"
+                    android:layout_marginEnd="@dimen/spacing_16"
+                    android:layout_marginBottom="@dimen/spacing_8"
+                    android:text="@string/weight_label"
+                    app:layout_constraintEnd_toStartOf="@+id/textWeightValue"
+                    app:layout_constraintHorizontal_weight="2"
+                    app:layout_constraintStart_toStartOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textHeightValue" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textWeightValue"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_8"
+                    android:layout_marginTop="@dimen/spacing_4"
+                    android:layout_marginEnd="@dimen/spacing_16"
+                    android:textAlignment="textEnd"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="3"
+                    app:layout_constraintStart_toEndOf="@+id/textWeightCaption"
+                    app:layout_constraintTop_toBottomOf="@+id/textHeightValue" />
+
+                <androidx.appcompat.widget.AppCompatTextView
+                    android:id="@+id/textStatsCaption"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_marginStart="@dimen/spacing_16"
+                    android:layout_marginTop="@dimen/spacing_4"
+                    android:layout_marginEnd="@dimen/spacing_16"
+                    android:layout_marginBottom="@dimen/spacing_8"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintEnd_toEndOf="parent"
+                    app:layout_constraintHorizontal_weight="2"
+                    app:layout_constraintStart_toEndOf="@+id/textWeightCaption"
+                    app:layout_constraintTop_toBottomOf="@+id/textHeightValue" />
+
+                <androidx.recyclerview.widget.RecyclerView
+                    android:id="@+id/recyclerViewStats"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_marginTop="@dimen/spacing_8"
+                    android:layout_marginBottom="@dimen/spacing_8"
+                    android:orientation="vertical"
+                    app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
+                    app:layout_constraintBottom_toBottomOf="parent"
+                    app:layout_constraintTop_toBottomOf="@+id/textWeightCaption"
+                    tools:listitem="@layout/stat_item_content" />
+
+            </androidx.constraintlayout.widget.ConstraintLayout>
+
+        </com.facebook.shimmer.ShimmerFrameLayout>
+
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+</ScrollView>
